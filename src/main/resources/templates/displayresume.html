@@ -53,7 +53,7 @@
 <p style="padding-bottom: 0px">Education</p>
 <ul th:each="education : ${educations}" id="educations" type="none" >
     <li th:inline="text">[[${education.degreeType}]] in [[${education.degreeName}]]</li>
-    <li th:inline="text">[[${education.school}]], [[${education.gradYear}]]</li>
+    <li th:inline="text">[[${education.school}]], [[${#dates.year(education.gradYear)}]]</li>
 
 </ul>
 
@@ -61,7 +61,7 @@
 <ul id="experiences" th:each="experience : ${experiences}" type="none"  >
 
     <li th:inline="text">[[${experience.jobTitle}]]</li>
-    <li th:inline="text">[[${experience.company}]] [[${experience.startDate}]]-[[${experience.endDate}]]</li>
+    <li th:inline="text">[[${experience.company}]] [[${#dates.monthName(experience.startDate)}]] [[${#dates.year(experience.startDate)}]]-[[${experience.endDate}]]</li>
     <li th:inline="text">Duties: [[${experience.duty}]]</li>
 
 

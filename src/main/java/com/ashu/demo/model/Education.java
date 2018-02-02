@@ -1,11 +1,11 @@
 package com.ashu.demo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Date;
 
 @Entity
 public class Education {
@@ -19,15 +19,16 @@ public class Education {
     private String school;
 
     @NotNull
-    @Size(min=1)
-    private String gradYear;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Temporal(TemporalType.DATE)
+    private Date gradYear;
 
     @NotNull
-    @Size(min=1)
+    @Size(min=1,message = "please enter degree type eg. BSc , MSc")
     private String degreeType;
 
     @NotNull
-    @Size(min=1)
+    @Size(min=1,message = "Please enter degree name")
     private String degreeName;
 
 
@@ -47,13 +48,6 @@ public class Education {
         this.school = school;
     }
 
-    public String getGradYear() {
-        return gradYear;
-    }
-
-    public void setGradYear(String gradYear) {
-        this.gradYear = gradYear;
-    }
 
     public String getDegreeType() {
         return degreeType;
@@ -65,6 +59,14 @@ public class Education {
 
     public String getDegreeName() {
         return degreeName;
+    }
+
+    public Date getGradYear() {
+        return gradYear;
+    }
+
+    public void setGradYear(Date gradYear) {
+        this.gradYear = gradYear;
     }
 
     public void setDegreeName(String degreeName) {

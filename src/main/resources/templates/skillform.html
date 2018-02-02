@@ -20,6 +20,21 @@
 
     Your Rating: <input type="text" th:field="*{rating}" class="form-control"/>
     <span th:if="${#fields.hasErrors('rating')}" th:errors="*{rating}"></span> <br/>
+
+
+    <!--<div class="input-group mb-3 form-control">-->
+        <!--<div class="input-group-prepend">-->
+            <!--<label class="input-group-text" for="inputGroupSelect01">Options</label>-->
+        <!--</div>-->
+        <!--<select class="custom-select" id="inputGroupSelect01">-->
+            <!--<option selected="selected">Choose...</option>-->
+            <!--<option value="Excellent">Excellent</option>-->
+            <!--<option value="Very Good">Very Good</option>-->
+            <!--<option value="Good">Good</option>-->
+            <!--<option value="Fair">Fair</option>-->
+        <!--</select>-->
+    <!--</div>-->
+
     <input type="submit" value="Save" class="btn btn-primary"/>
 </form>
     </div>

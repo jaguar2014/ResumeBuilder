@@ -24,7 +24,7 @@
     <span th:if="${#fields.hasErrors('company')}" th:errors="*{company}"></span>
 
     <br/> <label for="start">Start Date:</label>
-    <input type="text" id="start"  th:field="*{startDate}" class="form-control"/>
+    <input type="date" id="start"  th:field="*{startDate}" class="form-control"/>
     <span th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}"></span> <br/>
 
 

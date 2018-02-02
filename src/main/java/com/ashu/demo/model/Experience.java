@@ -1,12 +1,13 @@
 package com.ashu.demo.model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 public class Experience {
@@ -22,13 +23,16 @@ public class Experience {
     @Size(min=1,max =300,message = "please provide a job title")
     private  String jobTitle;
 
-    @NotNull
-    @Size(min=1, message = "please provide a start date")
-    private String startDate;
-
 
     @NotNull
-    @Size(min=1,message = "please provide end date")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Temporal(TemporalType.DATE)
+    private Date startDate;
+
+
+
+    @NotNull
+    @Size(min=1,max =15,message = "please provide a job title")
     private String endDate;
 
     @NotNull
@@ -59,13 +63,14 @@ public class Experience {
         this.company = company;
     }
 
-    public String getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(String startDate) {
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
+
 
     public String getEndDate() {
         return endDate;
