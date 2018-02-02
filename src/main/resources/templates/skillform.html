@@ -7,17 +7,24 @@
 </head>
 <body>
 
-<form th:action="@{/addskill}" th:object="${skill}" th:method="POST">
+
+<div class="container">
+    <h1 class="text-center">Add Skills With Rating</h1>
+    <div class="col-md-6 col-md-offset-3">
+
+<form th:action="@{/addskill}" th:object="${skill}" th:method="POST" class="form-group">
     <input type="hidden" th:field="*{id}"/>
 
-    Skill Name: <input type="text" th:field="*{skillName}"/>
+    Skill Name: <input type="text" th:field="*{skillName}" class="form-control"/>
     <span th:if="${#fields.hasErrors('skillName')}" th:errors="*{skillName}"></span> <br/>
 
-    Your Rating: <input type="text" th:field="*{rating}"/>
+    Your Rating: <input type="text" th:field="*{rating}" class="form-control"/>
     <span th:if="${#fields.hasErrors('rating')}" th:errors="*{rating}"></span> <br/>
-    <input type="submit" value="Submit" />
+    <input type="submit" value="Save" class="btn btn-primary"/>
 </form>
+    </div>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</div>
 </body>
 </html>

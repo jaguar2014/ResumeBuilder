@@ -7,36 +7,42 @@
 </head>
 <body>
 
-<form th:action="@{/addexperience}"  th:object="${experience}" th:method="POST">
+<div class="container">
+    <h1 class="text-center">Add Experiences</h1>
+    <div class="col-md-6 col-md-offset-3">
+
+<form th:action="@{/addexperience}"  th:object="${experience}" th:method="POST" class="form-group">
     <input type="hidden" th:field="*{id}" />
 
     <label for="title">Job Title:</label>
-    <input type="text" th:field="*{jobTitle}" id="title" />
+    <input type="text" th:field="*{jobTitle}" id="title"  clas="form-control"/>
     <span th:if="${#fields.hasErrors('jobTitle')}" th:errors="*{jobTitle}"></span> <br/>
 
 
     <label for="com">Company:</label>
-    <input type="text" id="com"  th:field="*{company}"/><br/>
+    <input type="text" id="com"  th:field="*{company}" class="form-control"/><br/>
     <span th:if="${#fields.hasErrors('company')}" th:errors="*{company}"></span>
 
     <br/> <label for="start">Start Date:</label>
-    <input type="text" id="start"  th:field="*{startDate}"/>
+    <input type="text" id="start"  th:field="*{startDate}" class="form-control"/>
     <span th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}"></span> <br/>
 
 
     <br/> <label for="end">End Date: </label>
-    <input type="text" id="end"  th:field="*{endDate}"/>
+    <input type="text" id="end"  th:field="*{endDate}" class="form-control"/>
     <span th:if="${#fields.hasErrors('endDate')}" th:errors="*{endDate}"></span><br/>
 
     <label for="du">Duties :</label>
-    <textarea type="textarea" rows="4" cols="50" th:field="*{duty}" id="du" ></textarea>
+    <textarea type="textarea" rows="4" cols="50" th:field="*{duty}" id="du" class="form-control" ></textarea>
     <span th:if="${#fields.hasErrors('duty')}" th:errors="*{duty}"></span> <br/>
 
 
-    <input type="submit" value="Submit" />
+    <input type="submit" value="Save"  class="btn btn-primary"/>
 
 </form>
+    </div>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</div>
 </body>
 </html>

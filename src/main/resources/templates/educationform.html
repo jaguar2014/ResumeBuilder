@@ -6,27 +6,30 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 </head>
 <body>
+<div class="container">
+    <h1 class="text-center">Add Educational Achivements</h1>
+    <div class="col-md-6 col-md-offset-3">
 
-
-<form th:action="@{/addeducation}" th:object="${education}" th:method="POST">
+<form th:action="@{/addeducation}" th:object="${education}" th:method="POST" class="form-group">
     <input type="hidden" th:field="*{id}"/>
 
-    Degree Type: <input type="text" th:field="*{degreeType}"/>
+    Degree Type: <input type="text" th:field="*{degreeType}" class="form-control"/>
     <span th:if="${#fields.hasErrors('degreeType')}" th:errors="*{degreeType}"></span> <br/>
 
-    Degree Name: <input type="text" th:field="*{degreeName}"/>
+    Degree Name: <input type="text" th:field="*{degreeName}" class="form-control"/>
     <span th:if="${#fields.hasErrors('degreeName')}" th:errors="*{degreeName}"></span> <br/>
 
-    School: <input type="text" th:field="*{school}"/>
+    School: <input type="text" th:field="*{school}" class="form-control"/>
     <span th:if="${#fields.hasErrors('school')}" th:errors="*{school}"></span> <br/>
 
-    Graduation Year: <input type="text" th:field="*{gradYear}"/>
+    Graduation Year: <input type="text" th:field="*{gradYear}" class="form-control"/>
     <span th:if="${#fields.hasErrors('gradYear')}" th:errors="*{gradYear}"></span> <br/>
 
-    <input type="submit" value="Submit" />
+    <input type="submit" value="Save"  class="btn btn-primary"/>
 </form>
-
+    </div>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</div>
 </body>
 </html>
