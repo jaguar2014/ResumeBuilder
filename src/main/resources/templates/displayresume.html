@@ -3,34 +3,37 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Dispay Resume</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 </head>
 <body>
 
-<ul th:each="user : ${users}" id="user">
-<li th:text="${user.firstName}"></li>
-<li th:text="${user.lastName}"></li>
-<li th:text="${user.email}"></li>
-</ul>
+<div th:each="user : ${users}" id="user">
+<span th:text="${user.firstName}">-</span>
+<span th:text="${user.lastName}"></span>
+<p th:text="${user.email}"></p>
+</div>
 
-<ul th:each="education : ${educations}" id="educations">
+<p style="padding-bottom: 0px">Education</p>
+<ul th:each="education : ${educations}" id="educations" type="none" >
     <li th:inline="text">[[${education.degreeType}]] in [[${education.degreeName}]]</li>
     <li th:inline="text">[[${education.school}]], [[${education.gradYear}]]</li>
 
 </ul>
 
-
-<ul id="experiences" th:each="experience : ${experiences}">
+<p>Experience</p>
+<ul id="experiences" th:each="experience : ${experiences}" type="none"  >
 
     <li th:inline="text">[[${experience.jobTitle}]]</li>
-    <li th:inline="text">[[${experience.company}]], [[${experience.startDate}]]-[[${experience.endDate}]]</li>
+    <li th:inline="text">[[${experience.company}]] [[${experience.startDate}]]-[[${experience.endDate}]]</li>
     <li th:inline="text">Duties: [[${experience.duty}]]</li>
 
 
 </ul>
 
-<ul id="skills"   th:each="skill : ${skills}">
+<p>Skills</p>
+<ul id="skills"   th:each="skill : ${skills}" type="none" >
 
-    <li th:inline="text">[[${skill.skillName}]] , [[${skill.rating}]]</li>
+    <li th:inline="text">[[${skill.skillName}]]  [[${skill.rating}]]</li>
 
 </ul>
 
@@ -39,5 +42,8 @@
     <li><a href="/addeducation">Add Education</a></li>
     <li><a href="/addskill">Add Skill</a></li>
 </ul>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>
