@@ -15,11 +15,11 @@ public class Experience {
     private long id;
 
     @NotNull
-    @Size(min=1,message = "please provide a company")
+    @Size(min=1, max =300,message = "please provide a company")
     private String company;
 
     @NotNull
-    @Size(min=1,message = "please provide a job title")
+    @Size(min=1,max =300,message = "please provide a job title")
     private  String jobTitle;
 
     @NotNull

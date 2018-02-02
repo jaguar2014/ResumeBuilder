@@ -44,7 +44,7 @@
 
 
 
-<div th:each="user : ${users}" id="user">
+<div th:each="user : ${users[0]}" id="user">
 <span th:text="${user.firstName}">-</span>
 <span th:text="${user.lastName}"></span>
 <p th:text="${user.email}"></p>
@@ -75,11 +75,7 @@
 </ul>
 
 
-<!--<ul type="none">-->
-    <!--<li><a href="/addexperience">Add Experience</a></li>-->
-    <!--<li><a href="/addeducation">Add Education</a></li>-->
-    <!--<li><a href="/addskill">Add Skill</a></li>-->
-<!--</ul>-->
+
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
