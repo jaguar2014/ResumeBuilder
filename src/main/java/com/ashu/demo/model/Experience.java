@@ -20,6 +20,10 @@ public class Experience {
 
     @NotNull
     @Size(min=1)
+    private  String jobTitle;
+
+    @NotNull
+    @Size(min=1)
     private String startDate;
 
 
@@ -31,6 +35,13 @@ public class Experience {
     @Size(min=1)
     private String duty;
 
+    public String getJobTitle() {
+        return jobTitle;
+    }
+
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
+    }
 
     public long getId() {
         return id;

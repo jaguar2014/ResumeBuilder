@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Skills</title>
+</head>
+<body>
+
+<form th:action="@{/addskill}" th:object="${skill}" th:method="POST">
+    <input type="hidden" th:field="*{id}"/>
+
+    Skill Name: <input type="text" th:field="*{skillName}"/>
+    <span th:if="${#fields.hasErrors('skillName')}" th:errors="*{skillName}"></span> <br/>
+
+    Your Rating: <input type="text" th:field="*{rating}"/>
+    <span th:if="${#fields.hasErrors('rating')}" th:errors="*{rating}"></span> <br/>
+    <input type="submit" value="Submit" />
+</form>
+
+</body>
+</html>

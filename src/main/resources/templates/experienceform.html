@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Experiences</title>
+</head>
+<body>
+
+<form th:action="@{/addexperience}"  th:object="${experience}" th:method="POST">
+    <input type="hidden" th:field="*{id}" />
+
+    <label for="title">Job Title:</label>
+    <input type="text" th:field="*{jobTitle}" id="title" />
+    <span th:if="${#fields.hasErrors('jobTitle')}" th:errors="*{jobTitle}"></span> <br/>
+
+
+    <label for="com">Company:</label>
+    <input type="text" id="com"  th:field="*{company}"/><br/>
+    <span th:if="${#fields.hasErrors('company')}" th:errors="*{company}"></span>
+
+    <br/> <label for="start">Start Date:</label>
+    <input type="text" id="start"  th:field="*{startDate}"/>
+    <span th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}"></span> <br/>
+
+
+    <br/> <label for="end">End Date: </label>
+    <input type="text" id="end"  th:field="*{endDate}"/>
+    <span th:if="${#fields.hasErrors('endDate')}" th:errors="*{endDate}"></span><br/>
+
+    <label for="du">Duties :</label>
+    <textarea type="textarea" rows="4" cols="50" th:field="*{duty}" id="du" ></textarea>
+    <span th:if="${#fields.hasErrors('duty')}" th:errors="*{duty}"></span> <br/>
+
+
+    <input type="submit" value="Submit" />
+
+</form>
+
+</body>
+</html>

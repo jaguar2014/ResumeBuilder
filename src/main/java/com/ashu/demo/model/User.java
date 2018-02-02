@@ -18,12 +18,36 @@ public class User {
 
     @NotNull
     @Size(min=1)
-    private String name;
+    private String firstName;
+
+
+    @NotNull
+    @Size(min=1)
+    private String lastName;
+
 
 
     @NotNull
     @Size(min=1)
     private String email;
+
+
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
     public long getId() {
         return id;
@@ -31,14 +55,6 @@ public class User {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getEmail() {

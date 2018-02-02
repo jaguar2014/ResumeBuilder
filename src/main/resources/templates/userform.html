@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Display Resume</title>
+</head>
+<body>
+<form th:action="@{/adduser}" th:object="${user}" th:method="POST">
+    <input type="hidden" th:field="*{id}" />
+
+    <label for="fname">First Name:</label>
+    <input type="text" id="fname"  th:field="*{firstName}"/>
+    <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span> <br/>
+
+    <label for="fname">Last Name:</label>
+    <input type="text" id="lname"  th:field="*{lastName}"/><br/>
+    <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
+
+    <br/> <label for="mail">Email:</label>
+    <input type="email" id="mail"  th:field="*{email}"/>
+    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span> <br/>
+
+    <input type="submit" value="Save and Add experience"/>
+
+</form>
+</body>
+</html>

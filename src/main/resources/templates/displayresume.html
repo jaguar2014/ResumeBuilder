@@ -2,9 +2,42 @@
 <html lang="en" xmlns:th="www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Display Resume</title>
+    <title>Dispay Resume</title>
 </head>
 <body>
 
+<ul th:each="user : ${users}" id="user">
+<li th:text="${user.firstName}"></li>
+<li th:text="${user.lastName}"></li>
+<li th:text="${user.email}"></li>
+</ul>
+
+<ul th:each="education : ${educations}" id="educations">
+    <li th:inline="text">[[${education.degreeType}]] in [[${education.degreeName}]]</li>
+    <li th:inline="text">[[${education.school}]], [[${education.gradYear}]]</li>
+
+</ul>
+
+
+<ul id="experiences" th:each="experience : ${experiences}">
+
+    <li th:inline="text">[[${experience.jobTitle}]]</li>
+    <li th:inline="text">[[${experience.company}]], [[${experience.startDate}]]-[[${experience.endDate}]]</li>
+    <li th:inline="text">Duties: [[${experience.duty}]]</li>
+
+
+</ul>
+
+<ul id="skills"   th:each="skill : ${skills}">
+
+    <li th:inline="text">[[${skill.skillName}]] , [[${skill.rating}]]</li>
+
+</ul>
+
+<ul type="none">
+    <li><a href="/addexperience">Add Experience</a></li>
+    <li><a href="/addeducation">Add Education</a></li>
+    <li><a href="/addskill">Add Skill</a></li>
+</ul>
 </body>
 </html>
