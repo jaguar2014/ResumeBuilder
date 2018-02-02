@@ -16,11 +16,11 @@ public class Skill {
     private long id;
 
     @NotNull
-    @Size(min=1)
+    @Size(min=1,message = "please provide a skill name")
     private String skillName;
 
     @NotNull
-    @Size(min=1)
+    @Size(min=1, message = "Please provide a skills rating")
     private String rating;
 
 

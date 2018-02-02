@@ -15,24 +15,24 @@ public class Experience {
     private long id;
 
     @NotNull
-    @Size(min=1)
+    @Size(min=1,message = "please provide a company")
     private String company;
 
     @NotNull
-    @Size(min=1)
+    @Size(min=1,message = "please provide a job title")
     private  String jobTitle;
 
     @NotNull
-    @Size(min=1)
+    @Size(min=1, message = "please provide a start date")
     private String startDate;
 
 
     @NotNull
-    @Size(min=1)
+    @Size(min=1,message = "please provide end date")
     private String endDate;
 
     @NotNull
-    @Size(min=1)
+    @Size(min=1, message = "please provide duties")
     private String duty;
 
     public String getJobTitle() {

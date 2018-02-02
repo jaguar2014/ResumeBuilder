@@ -17,18 +17,18 @@ public class User {
 
 
     @NotNull
-    @Size(min=1)
+    @Size(min=1,message = "Please provide first name")
     private String firstName;
 
 
     @NotNull
-    @Size(min=1)
+    @Size(min=1, message = "Please provide last name")
     private String lastName;
 
 
 
     @NotNull
-    @Size(min=1)
+    @Size(min=1, message = "Please provide email")
     private String email;
 
 
